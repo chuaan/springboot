@@ -1,6 +1,6 @@
 package com.chuaan.springboot.controller.hello;
 
-import com.chuaan.springboot.DAO.User;
+import com.chuaan.springboot.account.User;
 import com.chuaan.springboot.DAO.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

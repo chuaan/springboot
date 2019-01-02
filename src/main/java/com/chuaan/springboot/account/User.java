@@ -1,17 +1,30 @@
-package com.chuaan.springboot.DAO;
+package com.chuaan.springboot.account;
+
 
 /**
+ * 用户类
+ * 用户功能的实现和信息保存
  * author:chuaan
- * created:2018-12-29
+ * created:2018.12.28
  */
 
+
 public class User {
-    private long uid;
-    private String hashPW;
-    private String username;
-    private int admin;
+    private long uid = 59442197;
+
+    private String username = "test";
+
+
+    private int admin = 99;
     private String nickname;
     private String telephone;
+
+    public User(){
+        uid=-1;
+        username="";
+    }
+
+
 
     public long getUid() {
         return uid;
@@ -21,21 +34,14 @@ public class User {
         this.uid = uid;
     }
 
-    public String getHashPW() {
-        return hashPW;
-    }
-
-    public void setHashPW(String hashPW) {
-        this.hashPW = hashPW;
-    }
-
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String name) {
+        this.username = name;
     }
+
 
     public int getAdmin() {
         return admin;
@@ -60,4 +66,5 @@ public class User {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
 }

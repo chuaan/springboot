@@ -18,8 +18,8 @@ public class HelloJspController {
     @RequestMapping("/hellojsp")
     public String helloJsp(Model m) throws Exception{
         m.addAttribute("now", DateFormat.getDateTimeInstance().format(new Date()));
-        if(true)
-            throw new Exception("some exception");
-        return "hellojsp";
+   //     if(true)
+   //         throw new Exception("some exception");
+        return "mainpage";
     }
 }

@@ -1,8 +1,10 @@
 package com.chuaan.springboot.DAO;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+import com.chuaan.springboot.account.User;
 
 import java.util.List;
 
@@ -17,5 +19,10 @@ import java.util.List;
 public interface UserMapper {
     @Select("select * from user")
     List<User> findAll();
+
+
+    @Select("<script> SELECT uid,admin FROM user WHERE"
+            +" username = #{name} AND hashpw = #{hashPW} </script>")
+    List<User> getAdmin(@Param("name") String name, @Param("hashPW") String hashPW);
 
 }
