@@ -12,9 +12,13 @@
 </head>
 <body>
 
+<div class="pull-right">
+    <a href="/web/logout" class="btn btn-default btn-flat">logout</a>
+</div>
 
-
-
+<div class="pull-right">
+    <a href="/web/logout" class="btn btn-default btn-flat">change nickname</a>
+</div>
 
 </body>
 </html>

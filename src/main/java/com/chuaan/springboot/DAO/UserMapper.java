@@ -17,10 +17,13 @@ import java.util.List;
 @Mapper
 @Repository
 public interface UserMapper {
-    @Select("select * from user")
-    List<User> findAll();
+
+    // 测试用
+//    @Select("select * from user")
+//    List<User> findAll();
 
 
+    //
     @Select("<script> SELECT uid,admin FROM user WHERE"
             +" username = #{name} AND hashpw = #{hashPW} </script>")
     List<User> getAdmin(@Param("name") String name, @Param("hashPW") String hashPW);
