@@ -20,7 +20,7 @@ public class SecurityHandler implements HandlerInterceptor {
         //基本代码都来源于LoginController的get里面，应该是把这里复用起来，但是demo就多走一步算了
         Admin admin = (Admin)request.getSession().getAttribute("Current_Admin");
         if(admin==null){
-            response.sendRedirect("/login");
+            response.sendRedirect("/redirect?next="+request.getRequestURI());
             return false;
 
         }
