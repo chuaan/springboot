@@ -20,6 +20,6 @@ public class HelloJspController {
         m.addAttribute("now", DateFormat.getDateTimeInstance().format(new Date()));
    //     if(true)
    //         throw new Exception("some exception");
-        return "mainpage";
+        return "web/mainpage";
     }
 }

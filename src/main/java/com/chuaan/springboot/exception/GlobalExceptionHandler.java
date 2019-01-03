@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -19,7 +18,7 @@ public class GlobalExceptionHandler {
         ModelAndView mav = new ModelAndView();
         mav.addObject("exception",e);
         mav.addObject("url", req.getRequestURI());
-        mav.setViewName("errorPage");
+        mav.setViewName("web/errorPage");
         return mav;
     }
 }

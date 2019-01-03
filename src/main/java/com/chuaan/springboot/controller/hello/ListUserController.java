@@ -23,7 +23,7 @@ public class ListUserController {
     public String listUser(Model m) throws Exception{
         List<User> users= userMapper.findAll();
         m.addAttribute("users", users);
-        return "listUser";
+        return "web/listUser";
 
     }
 }

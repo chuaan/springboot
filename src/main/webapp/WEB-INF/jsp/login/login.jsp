@@ -11,7 +11,7 @@
     <title>Login</title>
 </head>
 <body>
-<form class="form-signin" action="login" method="post">
+<form class="form-signin" action="" method="post">
     <h2 class="form-signin-heading">请登录</h2>
     #if ( $!message )
     <div class="alert alert-danger" style="text-align: center;"><strong>${message}</strong></div>

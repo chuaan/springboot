@@ -3,7 +3,6 @@ package com.chuaan.springboot.controller.login;
 import com.chuaan.springboot.DAO.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,10 +32,10 @@ public class LoginController {
                            @RequestParam(required = false, value = "message", defaultValue = "") String message) {
         Admin admin = (Admin)session.getAttribute("Current_Admin");
         if(admin!=null && admin.getAdmin()<Admin.REJECT){
-            return "AlreadyLogin";
+            return "login/AlreadyLogin";
         }
 
-        return "login";
+        return "login/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -62,11 +61,12 @@ public class LoginController {
             session.setAttribute("Current_Admin", admin);
 
 
-            return "mainpage";
+            //2019.1.3 改成redirect
+            return "redirect:/web/mainpage";
         }
         //      if(name.equals("test") && hashPW.equals("9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08")){
         //        return "mainpage";
         //  }
-        return "say";
+        return "web/say";
     }
 }
