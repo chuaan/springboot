@@ -21,12 +21,15 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
 
+    private final SHA256 sha256;
+
+    private final UserMapper userMapper;
 
     @Autowired
-    private SHA256 sha256;
-
-    @Autowired
-    UserMapper userMapper;
+    public LoginController(SHA256 sha256, UserMapper userMapper){
+        this.sha256 = sha256;
+        this.userMapper = userMapper;
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginGet(HttpSession session,

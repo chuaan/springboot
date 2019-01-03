@@ -17,7 +17,7 @@
 </div>
 
 <div class="pull-right">
-    <a href="/web/logout" class="btn btn-default btn-flat">change nickname</a>
+    <a href="/web/update/nickname" class="btn btn-default btn-flat">change nickname</a>
 </div>
 
 </body>

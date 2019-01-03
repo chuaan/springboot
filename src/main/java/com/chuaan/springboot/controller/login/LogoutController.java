@@ -21,8 +21,13 @@ import java.util.Enumeration;
 @RequestMapping(value="/web")
 public class LogoutController {
 
+
+    private final UtilSession utilSession;
+
     @Autowired
-    UtilSession utilSession;
+    public LogoutController(UtilSession utilSession){
+        this.utilSession = utilSession;
+    }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpSession session, HttpServletResponse response){
