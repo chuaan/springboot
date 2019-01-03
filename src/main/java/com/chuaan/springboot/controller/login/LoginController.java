@@ -53,7 +53,13 @@ public class LoginController {
         }
 
         List<User> users = userMapper.getAdmin(name,hashPW);
-        Admin admin = new Admin(users.get(0));
+        Admin admin;
+        if(users.isEmpty()){
+            admin = new Admin();
+        } else{
+            admin = new Admin(users.get(0));
+        }
+
 
 
 

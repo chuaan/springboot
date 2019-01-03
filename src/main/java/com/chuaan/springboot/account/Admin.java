@@ -22,7 +22,7 @@ public class Admin {
     //name
     private String name = "";
 
-    Admin(){
+    public Admin(){
         setAdmin(REJECT);
         setName("");
         setUid(-1);
