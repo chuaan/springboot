@@ -39,6 +39,11 @@
                 <td align="right"><font color="red">*</font>邀请码: </td>
                 <td><input name="key" type="text" size=20></td>
             </tr>
+            <tr>
+                <div class="pull-right">
+                    <a href="mainpage" class="btn btn-default btn-flat">mainPage</a>
+                </div>
+            </tr>
             <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-in"></span> 注册</button>
         </table>
     </form>

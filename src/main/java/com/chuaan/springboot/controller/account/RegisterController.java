@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chuaan.springboot.service.util.SHA256;
 
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * 注册的控制器，但是有很多问题没有考虑
  * 输入值范围的确定
@@ -15,7 +17,7 @@ import com.chuaan.springboot.service.util.SHA256;
  * 邀请码写在了代码里而不是在数据库中
  * 没有验证码来降低负载
  * 没有防止sql注入
- *
+ * 不知道如何解决uid生成
  *
  *
  * author:chuaan
@@ -25,8 +27,10 @@ import com.chuaan.springboot.service.util.SHA256;
 
 @Controller
 public class RegisterController {
-    RegisterService registerService;
-    SHA256 sha256;
+
+    private final RegisterService registerService;
+    private final SHA256 sha256;
+
     @Autowired
     RegisterController(RegisterService registerService, SHA256 sha256){
         this.registerService=registerService;
@@ -44,7 +48,8 @@ public class RegisterController {
                                @RequestParam("password2") String password2,
                                @RequestParam("nickname") String nickname,
                                @RequestParam("telephone") String telephone,
-                               @RequestParam("key") String key){
+                               @RequestParam("key") String key,
+                               HttpServletResponse response){
         int localAdmin;
         if(!"777".equals(key)){
             return "redirect:/login";
@@ -53,13 +58,7 @@ public class RegisterController {
             localAdmin = 1;
         }
         if(password.equals(password2)){
-            String hashPW="";
-            try {
-
-                hashPW = sha256.toSHA256(password);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
+            String hashPW = sha256.toSHA256(password);
             registerService.register(name,hashPW,nickname,localAdmin,telephone,key);
         }
 

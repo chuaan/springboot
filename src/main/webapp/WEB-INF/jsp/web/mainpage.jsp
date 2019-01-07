@@ -13,11 +13,15 @@
 <body>
 
 <div class="pull-right">
-    <a href="/web/logout" class="btn btn-default btn-flat">logout</a>
+    <a href="logout" class="btn btn-default btn-flat">logout</a>
 </div>
 
 <div class="pull-right">
-    <a href="register" class="btn btn-default btn-flat">register</a>
+    <a href="listUser" class="btn btn-default btn-flat">list users</a>
+</div>
+
+<div class="pull-right">
+    <a href="user" class="btn btn-default btn-flat">user information</a>
 </div>
 
 </body>

@@ -30,6 +30,11 @@
 
         </tr>
     </c:forEach>
+    <tr>
+        <div class="pull-right">
+            <a href="mainpage" class="btn btn-default btn-flat">mainPage</a>
+        </div>
+    </tr>
 </table>
 
 </body>

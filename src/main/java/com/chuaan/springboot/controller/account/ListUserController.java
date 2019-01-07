@@ -1,4 +1,4 @@
-package com.chuaan.springboot.controller.hello;
+package com.chuaan.springboot.controller.account;
 
 import com.chuaan.springboot.account.User;
 import com.chuaan.springboot.DAO.UserMapper;
@@ -16,10 +16,15 @@ import java.util.List;
 
 @Controller
 public class ListUserController {
-    @Autowired
-    UserMapper userMapper;
 
-    @RequestMapping("/listUser")
+    private final UserMapper userMapper;
+
+    @Autowired
+    ListUserController(UserMapper userMapper){
+        this.userMapper=userMapper;
+    }
+
+    @RequestMapping("/web/listUser")
     public String listUser(Model m) throws Exception{
         List<User> users= userMapper.findAll();
         m.addAttribute("users", users);

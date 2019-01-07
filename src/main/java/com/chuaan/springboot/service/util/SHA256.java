@@ -19,12 +19,16 @@ import java.security.MessageDigest;
 @Service
 public final class SHA256 {
 
-    public String toSHA256(String content) throws Exception{
+    public String toSHA256(String content){
         MessageDigest messageDigest;
         String endS= "";
-        messageDigest = MessageDigest.getInstance("SHA-256");
-        byte[] hash = messageDigest.digest(content.getBytes("UTF-8"));
-        endS = HexUtils.toHexString(hash);
+        try {
+            messageDigest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = messageDigest.digest(content.getBytes("UTF-8"));
+            endS = HexUtils.toHexString(hash);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         return endS;
     }
