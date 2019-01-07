@@ -24,5 +24,9 @@
     <a href="user" class="btn btn-default btn-flat">user information</a>
 </div>
 
+<div class="pull-right">
+    <a href="password" class="btn btn-default btn-flat">change password</a>
+</div>
+
 </body>
 </html>

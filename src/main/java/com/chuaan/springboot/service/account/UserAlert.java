@@ -24,4 +24,16 @@ public class UserAlert {
             e.printStackTrace();
         }
     }
+    //密码修改失败
+    public void errorPasswordChange(HttpServletResponse response){
+        try {
+            response.setCharacterEncoding("utf-8");
+            PrintWriter out = response.getWriter();
+            out.print("<script>alert('Password change error');window.location='mainpage'</script>");
+            out.flush();
+            out.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
