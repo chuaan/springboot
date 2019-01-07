@@ -15,9 +15,13 @@
     <h2 class="form-signin-heading">请登录</h2>
     <div class="alert alert-danger" style="text-align: center;"><strong>${message}</strong></div>
     <input type="hidden" name="next" value=${next}>
-    <input name="username" type="text" class="form-control" value="$!{username}" placeholder="手机号码" autofocus>
+    <input name="username" type="text" class="form-control" placeholder="用户名" autofocus>
     <input name="password" type="password" class="form-control" placeholder="密码">
     <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-in"></span> 登陆</button>
 </form>
+<div class="pull-right">
+    <a href="register" class="btn btn-default btn-flat">register</a>
+</div>
+
 </body>
 </html>

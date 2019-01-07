@@ -17,7 +17,7 @@
 </div>
 
 <div class="pull-right">
-    <a href="/web/update/nickname" class="btn btn-default btn-flat">change nickname</a>
+    <a href="register" class="btn btn-default btn-flat">register</a>
 </div>
 
 </body>

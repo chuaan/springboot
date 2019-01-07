@@ -1,10 +1,9 @@
-package com.chuaan.springboot.configuration;
+package com.chuaan.springboot.config;
 
 import com.chuaan.springboot.handler.SecurityHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * 配置拦截器，把业务全部放在web里面

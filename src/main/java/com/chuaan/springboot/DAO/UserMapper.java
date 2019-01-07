@@ -1,9 +1,6 @@
 package com.chuaan.springboot.DAO;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import com.chuaan.springboot.account.User;
 
@@ -28,6 +25,10 @@ public interface UserMapper {
     @Select("<script> SELECT uid,admin FROM user WHERE"
             +" username = #{name} AND hashpw = #{hashPW} </script>")
     List<User> getAdmin(@Param("name") String name, @Param("hashPW") String hashPW);
+
+    // 插入一个新用户信息
+    @Insert("<script>INSERT INTO user VALUES(#{uid},#{name},#{hashPW},#{admin},#{nickname},#{telephone})</script>")
+    int insertUser(@Param("uid") long uid,@Param("name") String name,@Param("hashPW") String hashPW, @Param("admin") int admin, @Param("nickname") String nickname, @Param("telephone") String telephone);
 
     //修改这个用户的昵称
     @Update("<script> UPDATE user SET nickname = #{nickname} WHERE uid = #{uid}</script>")

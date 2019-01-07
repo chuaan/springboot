@@ -1,4 +1,4 @@
-package com.chuaan.springboot.util;
+package com.chuaan.springboot.service.util;
 
 
 import org.apache.tomcat.util.buf.HexUtils;

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.chuaan.springboot.util.SHA256;
+import com.chuaan.springboot.service.util.SHA256;
 import com.chuaan.springboot.account.*;
 import java.util.List;
 
