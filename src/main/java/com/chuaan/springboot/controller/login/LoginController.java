@@ -41,7 +41,7 @@ public class LoginController {
                            @RequestParam(required = false, value = "message", defaultValue = "") String message) {
         Admin admin = (Admin)session.getAttribute("Current_Admin");
         if(admin!=null && admin.getAdmin()<Admin.REJECT){
-            return "login/AlreadyLogin";
+            return "redirect:/web/mainpage";
         }
 
         return "login/login";
@@ -77,7 +77,8 @@ public class LoginController {
         //      if(name.equals("test") && hashPW.equals("9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08")){
         //        return "mainpage";
         //  }
-        userAlert.noSuchUser(response);
+  //      userAlert.noSuchUser(response);
+        userAlert.userAlert(response,"login error","login");
         return "login/login";
     }
 }

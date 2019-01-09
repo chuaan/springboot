@@ -35,7 +35,19 @@
             </div>
         </tr>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-in"></span> 注册</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-in"></span> 修改</button>
+    </table>
+</form>
+
+<form action="/web/deleteUser", method="post">
+    <table>
+        <tr>
+            <td align="right"><font color="red">*</font>输入密码删除当前用户: </td>
+            <td><input name="password" type="password" size=20></td>
+        </tr>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-in"></span> 删除</button>
     </table>
 </form>
 

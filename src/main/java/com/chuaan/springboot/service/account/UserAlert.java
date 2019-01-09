@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 
 @Service
 public class UserAlert {
+    /*
     //找不到这个用户名或者密码错误
     public void noSuchUser(HttpServletResponse response){
         try {
@@ -30,6 +31,19 @@ public class UserAlert {
             response.setCharacterEncoding("utf-8");
             PrintWriter out = response.getWriter();
             out.print("<script>alert('Password change error');window.location='mainpage'</script>");
+            out.flush();
+            out.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+*/
+    //根据传递的message来提示
+    public void userAlert(HttpServletResponse response, String alertMessage, String nextPageMessage){
+        try {
+            response.setCharacterEncoding("utf-8");
+            PrintWriter out = response.getWriter();
+            out.print("<script>alert('"+alertMessage+"');window.location='"+nextPageMessage+"'</script>");
             out.flush();
             out.close();
         }catch (Exception e){

@@ -15,20 +15,18 @@ import javax.servlet.http.HttpServletResponse;
 public class SecurityHandler implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception{
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
 
         //基本代码都来源于LoginController的get里面，应该是把这里复用起来，但是demo就多走一步算了
-        Admin admin = (Admin)request.getSession().getAttribute("Current_Admin");
-        if(admin==null){
-            response.sendRedirect("/redirect?next="+request.getRequestURI());
+        Admin admin = (Admin) request.getSession().getAttribute("Current_Admin");
+        if (admin == null) {
+            response.sendRedirect("/redirect?next=" + request.getRequestURI());
             return false;
 
-        }
-        else if(admin.getAdmin()>=Admin.REJECT){
+        } else if (admin.getAdmin() >= Admin.REJECT) {
             response.sendRedirect("/no_authority");
             return false;
         }
-
 
         return true;
 

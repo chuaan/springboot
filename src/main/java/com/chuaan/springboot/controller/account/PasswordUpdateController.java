@@ -57,7 +57,7 @@ public class PasswordUpdateController {
             userMapper.updatePassword(sha256.toSHA256(password), admin.getUid());
             return "redirect:/web/logout";
         }else{
-            userAlert.errorPasswordChange(response);
+            userAlert.userAlert(response,"password error","mainpage");
         }
 
         return "redirect:/web/mainpage";

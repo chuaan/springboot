@@ -1,3 +1,4 @@
+/*
 package com.chuaan.springboot;
 
 import org.springframework.boot.SpringApplication;
@@ -11,4 +12,4 @@ public class SpringbootApplication {
     }
 
 }
-
+*/
